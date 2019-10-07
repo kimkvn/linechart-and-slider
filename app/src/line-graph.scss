@@ -1,0 +1,96 @@
+.lineGraphComponent {
+  position: relative;
+}
+
+.chartWrapper {
+  height: 400px;
+  margin-bottom: 25px;
+}
+
+// Benchmark Gradient Area
+.gradientArea {
+  fill: none;
+  stroke: #e1e1e2;
+}
+
+// Chart graph lines
+.graphLine {
+  fill: none;
+}
+
+.lineZero {
+  stroke: #e1e1e2;
+}
+
+.lineOne {
+  stroke: #0e99f7;
+}
+
+.lineTwo {
+  stroke: #3eb398;
+}
+
+.lineThree {
+  stroke: #fdaf17;
+}
+
+.lineFour {
+  stroke: #a261ff;
+}
+
+.lineFive {
+  stroke: #d32f2f;
+}
+
+// Chart axes
+
+.axis {
+  path {
+    display: none;
+  }
+
+  g {
+    line {
+      display: none;
+    }
+
+    text {
+      fill: #a3a3a4;
+    }
+  }
+}
+
+// Chart background gridlines
+.xGridLines,
+.yGridLines {
+  path,
+  g line {
+    stroke: #ececed;
+  }
+}
+
+.xGridLines {
+  g:first-of-type {
+    display: none;
+  }
+}
+
+// Chart tooltip
+.chartTooltip {
+  position: absolute;
+  display: flex;
+  width: 95px;
+  height: 33px;
+  justify-content: center;
+  align-content: center;
+  background: #476478;
+  color: #fff;
+  border-radius: 3px;
+  visibility: hidden;
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+}
