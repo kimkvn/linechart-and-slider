@@ -3,21 +3,16 @@ import cx from 'classnames';
 import moment from 'moment';
 import _ from 'lodash';
 
-import { ChartSelectors } from './ModeledPerformanceLineGraph';
 import { convertPercentChange, buildXTicks } from './line-graph.transform';
 
-import styles from './ModeledPerformanceLineGraph.scss';
-
-enum GraphLineClasses {
-  lineZero = 'lineZero',
-  lineOne = 'lineOne',
-  lineTwo = 'lineTwo',
-  lineThree = 'lineThree',
-  lineFour = 'lineFour',
-  lineFive = 'lineFive'
-}
-
-const GraphLineColors = [...Object.values(GraphLineClasses)];
+const GraphLineColors = [
+  'lineZero',
+  'lineOne',
+  'lineTwo',
+  'lineThree',
+  'lineFour',
+  'lineFive'
+];
 
 // Graph Dimensions
 const totalWidth = 900;
@@ -153,7 +148,7 @@ const drawModeledPerformanceGraph = (
   // Generate and render the X Axis
   svg
     .append('g')
-    .attr('class', 'x-axis ' + styles.axis)
+    .attr('class', 'x-axis ' + 'axis')
     .attr('transform', 'translate(0,' + graphHeight + ')')
     .call(
       d3
@@ -164,7 +159,7 @@ const drawModeledPerformanceGraph = (
   // Generate and render the Y Axis
   svg
     .append('g')
-    .attr('class', 'y-axis ' + styles.axis)
+    .attr('class', 'y-axis ' + 'axis')
     .call(
       d3
         .axisLeft(yScale)
@@ -181,7 +176,7 @@ const drawModeledPerformanceGraph = (
   };
   svg
     .append('g')
-    .attr('class', 'x-grid ' + styles.xGridLines)
+    .attr('class', 'x-grid ' + 'xGridLines')
     .attr('transform', 'translate(0, ' + graphHeight + ')')
     .call(
       makeXGridlines()
@@ -190,7 +185,7 @@ const drawModeledPerformanceGraph = (
     );
   svg
     .append('g')
-    .attr('class', 'y-grid ' + styles.yGridLines)
+    .attr('class', 'y-grid ' + 'yGridLines')
     .call(
       makeYGridlines()
         .tickSize(-graphWidth)
@@ -206,14 +201,14 @@ const drawModeledPerformanceGraph = (
     .append('g')
     .attr('class', 'gradient-area-container')
     .append('path')
-    .attr('class', 'area' + styles.gradientArea)
+    .attr('class', 'area' + 'gradientArea')
     .style('fill', 'url(#areaGradient)')
     .attr('d', areaFunction(chartData[0].values));
 
   // Render the comparator lines
   const graphLines = svg.append('g').attr('class', 'graph-lines-container');
   chartData.forEach((dataSet, index) => {
-    const styleClass = cx(styles.graphLine, styles[GraphLineColors[index]]);
+    const styleClass = cx('graphLine', GraphLineColors[index]);
     return graphLines
       .append('path')
       .attr('class', styleClass)
@@ -252,9 +247,7 @@ const drawModeledPerformanceGraph = (
       .attr('cy', d => yScale(d.percentChange))
       .attr('class', d => {
         const pointIndex = _.findIndex(dataSet.values, d);
-        return `scatter-point point-${pointIndex} ${
-          styles[GraphLineColors[index]]
-        }`;
+        return `scatter-point point-${pointIndex} ${GraphLineColors[index]}`;
       })
       .attr('data-dateId', d => d.date)
       .style('stroke-width', '1px')
@@ -266,8 +259,8 @@ const drawModeledPerformanceGraph = (
   const mouseArea = svg.append('rect').attr('class', 'mouseAreaRect');
 
   // Define mouse event handlers
-  const tooltip = d3.select(`#${ChartSelectors.chartTooltip}`);
-  const tooltipValue = d3.select(`#${ChartSelectors.chartTooltipValue}`);
+  const tooltip = d3.select(`#chart-tooltip`);
+  const tooltipValue = d3.select(`#chart-tooltip-value`);
 
   const mouseOver = () => {
     d3.select(`.mouse-line`).style('opacity', '1');
@@ -291,16 +284,14 @@ const drawModeledPerformanceGraph = (
     const dataPoint = chartData[0].values.find(value => value.date === xDate);
     if (dataPoint) {
       // move vertical line
-      d3.select(`.mouse-line`).attr(
-        'transform',
-        `translate(${xDot}, 0)`
-      );
+      d3.select(`.mouse-line`).attr('transform', `translate(${xDot}, 0)`);
 
       // Hide previous/all scatter points, but show new applicable ones
       d3.selectAll(`.scatter-point`).style('opacity', '0');
-      d3.selectAll(
-        `.scatter-point[data-dateId="${xDate}"]`
-      ).style('opacity', '1');
+      d3.selectAll(`.scatter-point[data-dateId="${xDate}"]`).style(
+        'opacity',
+        '1'
+      );
 
       // Set tooltip date value, and position
       const tooltipDate = moment(xDate).format('MMM DD, YYYY');
