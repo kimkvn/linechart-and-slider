@@ -2,7 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import './line-graph.scss';
+
+import data from './mockData.js';
+
 function App() {
+  console.log(data);
   return (
     <div className="App">
       <header className="App-header">

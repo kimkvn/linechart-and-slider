@@ -1,4 +1,4 @@
-{ "chart": [
+const data = { "chart": [
   {
     "id": 1457678330,
     "key": "60/40 Blend",
@@ -1517,4 +1517,6 @@
       }
     ]
   }
-]}
+]};
+
+export default data;
