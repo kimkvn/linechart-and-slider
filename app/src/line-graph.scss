@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.test{
+  color: purple;
+}
+
+.test span{
+  color: red;
+}
+
 .chartWrapper {
   height: 400px;
   margin-bottom: 25px;
@@ -44,35 +52,67 @@
 
 // Chart axes
 
-.axis {
-  path {
-    display: none;
-  }
+// .axis {
+//   path {
+//     display: none;
+//   }
 
-  g {
-    line {
-      display: none;
-    }
+//   g {
+//     line {
+//       display: none;
+//     }
 
-    text {
-      fill: #a3a3a4;
-    }
-  }
+//     text {
+//       fill: #a3a3a4;
+//     }
+//   }
+// }
+
+.axis path {
+  display: none;
+}
+
+.axis g line {
+  display: none;
+}
+
+.axis g text {
+  fill: #a3a3a4;
 }
 
 // Chart background gridlines
-.xGridLines,
-.yGridLines {
-  path,
-  g line {
-    stroke: #ececed;
-  }
+// .xGridLines,
+// .yGridLines {
+//   path,
+//   g line {
+//     stroke: #ececed;
+//   }
+// }
+
+.xGridLines path{
+  stroke: #ececed;
 }
 
-.xGridLines {
-  g:first-of-type {
-    display: none;
-  }
+.xGridLines g line {
+  stroke: #ececed;
+}
+
+.yGridLines path{
+  stroke: #ececed;
+}
+
+.yGridLines g line {
+  stroke: #ececed;
+}
+
+// .xGridLines {
+//   g:first-of-type {
+//     display: none;
+//   }
+// }
+
+.xGridLines g:first-of-type{
+  display: none;
 }
 
 // Chart tooltip
@@ -88,9 +128,15 @@
   border-radius: 3px;
   visibility: hidden;
 
-  span {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-  }
+  // span {
+  //   display: flex;
+  //   align-items: center;
+  //   font-size: 12px;
+  // }
+}
+
+.chartTooTip span{
+  display: flex;
+  align-items: center;
+  font-size: 12px;
 }
