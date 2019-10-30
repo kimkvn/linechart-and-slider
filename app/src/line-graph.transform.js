@@ -64,9 +64,7 @@ export const buildXTicks = (from, to) => {
     xAxisBuild.xTickFormat = "%b '%y";
     return xAxisBuild;
   }
-  {
-    xAxisBuild.xTicks = generateTicks(from, to, 1, 'year');
-    xAxisBuild.xTickFormat = '%Y';
-    return xAxisBuild;
-  }
+  xAxisBuild.xTicks = generateTicks(from, to, 1, 'year');
+  xAxisBuild.xTickFormat = '%Y';
+  return xAxisBuild;
 };

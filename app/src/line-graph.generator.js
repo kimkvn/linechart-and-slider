@@ -40,6 +40,7 @@ const drawModeledPerformanceGraph = (
   const chartData = rawChartData.map(comparator => {
     return convertPercentChange(comparator);
   });
+  console.log(chartData)
   ///////////////////////////////////////////////////
   //////////////// Set the Scales ///////////////////
   ///////////////////////////////////////////////////
@@ -148,7 +149,7 @@ const drawModeledPerformanceGraph = (
   // Generate and render the X Axis
   svg
     .append('g')
-    .attr('class', 'x-axis ' + 'axis')
+    .attr('class', 'x-axis axis')
     .attr('transform', 'translate(0,' + graphHeight + ')')
     .call(
       d3
@@ -159,7 +160,7 @@ const drawModeledPerformanceGraph = (
   // Generate and render the Y Axis
   svg
     .append('g')
-    .attr('class', 'y-axis ' + 'axis')
+    .attr('class', 'y-axis axis')
     .call(
       d3
         .axisLeft(yScale)
@@ -176,7 +177,7 @@ const drawModeledPerformanceGraph = (
   };
   svg
     .append('g')
-    .attr('class', 'x-grid ' + 'xGridLines')
+    .attr('class', 'x-grid xGridLines')
     .attr('transform', 'translate(0, ' + graphHeight + ')')
     .call(
       makeXGridlines()
@@ -185,7 +186,7 @@ const drawModeledPerformanceGraph = (
     );
   svg
     .append('g')
-    .attr('class', 'y-grid ' + 'yGridLines')
+    .attr('class', 'y-grid yGridLines')
     .call(
       makeYGridlines()
         .tickSize(-graphWidth)
@@ -201,7 +202,7 @@ const drawModeledPerformanceGraph = (
     .append('g')
     .attr('class', 'gradient-area-container')
     .append('path')
-    .attr('class', 'area' + 'gradientArea')
+    .attr('class', 'area gradientArea')
     .style('fill', 'url(#areaGradient)')
     .attr('d', areaFunction(chartData[0].values));
 
