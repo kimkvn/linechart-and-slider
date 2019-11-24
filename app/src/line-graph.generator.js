@@ -225,7 +225,7 @@ const drawModeledPerformanceGraph = (
     .append('g')
     .attr('class', 'mouseLineContainer')
     .append('line')
-    .attr('class', `.mouse-line`)
+    .attr('class', `mouse-line`)
     .style('stroke', '#a3a3a4')
     .style('stroke-width', '1px')
     .style('opacity', '0')
