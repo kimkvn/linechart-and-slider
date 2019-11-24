@@ -28,9 +28,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div className="test">test
+      <div id="app">
+        <div id="chart-container">
           <svg id="isa-modeled-performance-chart"></svg>
+          <div id="chart-tooltip">
+            <span id="chart-tooltip-value"></span>
+          </div>
         </div>
       </div>
     );

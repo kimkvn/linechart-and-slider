@@ -297,7 +297,7 @@ const drawModeledPerformanceGraph = (
       // Set tooltip date value, and position
       const tooltipDate = moment(xDate).format('MMM DD, YYYY');
       tooltipValue.html(tooltipDate);
-      const tooltipXPosition = d3Mouse[0];
+      const tooltipXPosition = d3Mouse[0] + 55;
       const tooltipYPosition = d3Mouse[1] + 55;
       tooltip.style('left', `${tooltipXPosition}px`);
       tooltip.style('top', `${tooltipYPosition}px`);
