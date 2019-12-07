@@ -47,11 +47,23 @@ const drawModeledPerformanceGraph = (
 
   const xScale = d3
     .scaleTime()
-    .domain(
-      d3.extent(chartData[0].values, d => {
-        return moment(d.date).valueOf();
+    // .domain(
+    //   d3.extent(chartData[0].values, d => {
+    //     return moment(d.date).valueOf();
+    //   })
+    // )
+    .domain([
+      d3.min(chartData, d => {
+        return d3.min(d.values, v => {
+          return moment(v.date).valueOf();
+        })
+      }),
+      d3.max(chartData, d => {
+        return d3.max(d.values, v => {
+          return moment(v.date).valueOf();
+        });
       })
-    )
+    ])
     .range([0, graphWidth]);
 
   const yScale = d3
@@ -92,7 +104,7 @@ const drawModeledPerformanceGraph = (
     .y1(d => {
       return yScale(d.percentChange);
     })
-    .curve(d3.curveBasis);
+    .curve(d3.curveLinear);
   ///////////////////////////////////////////////////
   ////////////// Initialize the SVG /////////////////
   ///////////////////////////////////////////////////
