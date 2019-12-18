@@ -52,18 +52,6 @@ const drawModeledPerformanceGraph = (
         return moment(d.date).valueOf();
       })
     )
-    // .domain([
-    //   d3.min(chartData, d => {
-    //     return d3.min(d.values, v => {
-    //       return moment(v.date).valueOf();
-    //     })
-    //   }),
-    //   d3.max(chartData, d => {
-    //     return d3.max(d.values, v => {
-    //       return moment(v.date).valueOf();
-    //     });
-    //   })
-    // ])
     .range([0, graphWidth]);
 
   const yScale = d3

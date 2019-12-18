@@ -1,16 +1,22 @@
 import React from 'react';
-import { tsPropertySignature } from '@babel/types';
+import { connect } from 'react-redux';
 
-const DisplayChip = props => {
+export const DisplayChip = props => {
   const style = {
     boxShadow: `${props.color} 4px 0px 0px 0px inset`
   };
   return (
     <div className="displayChip" style={style}>
       <span className="displayChipLabel">{props.label}</span>
-      <span className="displayChipValue">+100</span>
+      {props.showValues ? <span className="displayChipValue">+100</span> : null}
     </div>
   );
 };
 
-export default DisplayChip;
+export const mapStateToProps = store => {
+  return {
+    showValues: store.showValuesFlag
+  };
+};
+
+export default connect(mapStateToProps)(DisplayChip);

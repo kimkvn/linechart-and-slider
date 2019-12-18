@@ -1,18 +1,24 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 import './line-graph.scss';
 
 import data from '../mockData.js';
 
 import drawModeledPerformanceGraph from './line-graph.generator';
+import { showValues } from '../actions';
 
 class LineGraph extends React.Component {
-  showChipValue() {
-    console.log('show chip value');
+  constructor(props) {
+    super(props);
+    this.showChipValue = this.showChipValue.bind(this);
   }
 
-  setPercentChangeData() {
-    console.log('set percent changeData');
+  showChipValue(flag) {
+    this.props.showChipValue(flag);
+  }
+
+  setPercentChangeData(percentChangeData) {
+    // console.log('set percent changeData', percentChangeData);
   }
 
   componentDidMount() {
@@ -37,4 +43,10 @@ class LineGraph extends React.Component {
   }
 }
 
-export default LineGraph;
+export const mapDispatchToProps = dispatch => {
+  return {
+    showChipValue: flag => dispatch(showValues(flag))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(LineGraph);
