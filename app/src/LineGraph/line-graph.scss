@@ -1,14 +1,14 @@
-body{
-  background: #e8e8e8;
+body {
+  background: #f8f9fa;
 }
 
-#chart-container{
+#chart-container {
   position: relative;
   max-width: 900px;
   margin: 0 auto;
 }
 
-#isa-modeled-performance-chart{
+#isa-modeled-performance-chart {
   width: 900px;
   height: 400px;
 }
@@ -17,11 +17,11 @@ body{
   position: relative;
 }
 
-.test{
+.test {
   color: purple;
 }
 
-.test span{
+.test span {
   color: red;
 }
 
@@ -104,7 +104,7 @@ body{
 //   }
 // }
 
-.xGridLines path{
+.xGridLines path {
   stroke: #ececed;
 }
 
@@ -112,7 +112,7 @@ body{
   stroke: #ececed;
 }
 
-.yGridLines path{
+.yGridLines path {
   stroke: #ececed;
 }
 
@@ -126,7 +126,7 @@ body{
 //   }
 // }
 
-.xGridLines g:first-of-type{
+.xGridLines g:first-of-type {
   display: none;
 }
 
@@ -150,7 +150,7 @@ body{
   // }
 }
 
-#chart-tooltip span{
+#chart-tooltip span {
   display: flex;
   align-items: center;
   font-size: 12px;

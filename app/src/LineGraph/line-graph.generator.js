@@ -17,7 +17,7 @@ const GraphLineColors = [
 // Graph Dimensions
 const totalWidth = 900;
 const totalHeight = 440;
-const margin = { top: 60, right: 20, bottom: 60, left: 40 };
+const margin = { top: 20, right: 20, bottom: 60, left: 40 };
 const graphWidth = totalWidth - margin.left - margin.right;
 const graphHeight = totalHeight - margin.top - margin.bottom;
 

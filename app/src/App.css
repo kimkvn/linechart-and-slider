@@ -1,4 +1,25 @@
 #app {
-  max-width: 960px;
+  max-width: 900px;
   margin: 0 auto;
+}
+
+#display-chip-container {
+  padding: 20px 40px 0 40px;
+  display: flex;
+}
+
+.displayChip {
+  display: flex;
+  width: 150px;
+  min-width: 0;
+  height: 32px;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  padding: 3px 10px 3px 18px;
+  border: solid 1px #ececed;
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
 }
