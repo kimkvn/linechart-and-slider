@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import DisplayChip from './DisplayChip';
+
 import './line-graph.scss';
 
 import data from './mockData.js';
@@ -29,6 +31,8 @@ class App extends React.Component {
   render() {
     return (
       <div id="app">
+        <DisplayChip />
+        <DisplayChip />
         <div id="chart-container">
           <svg id="isa-modeled-performance-chart"></svg>
           <div id="chart-tooltip">
