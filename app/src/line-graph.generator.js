@@ -16,8 +16,8 @@ const GraphLineColors = [
 
 // Graph Dimensions
 const totalWidth = 900;
-const totalHeight = 400;
-const margin = { top: 30, right: 20, bottom: 30, left: 40 };
+const totalHeight = 440;
+const margin = { top: 60, right: 20, bottom: 60, left: 40 };
 const graphWidth = totalWidth - margin.left - margin.right;
 const graphHeight = totalHeight - margin.top - margin.bottom;
 
@@ -40,7 +40,7 @@ const drawModeledPerformanceGraph = (
   const chartData = rawChartData.map(comparator => {
     return convertPercentChange(comparator);
   });
-  console.log(chartData)
+  console.log(chartData);
   ///////////////////////////////////////////////////
   //////////////// Set the Scales ///////////////////
   ///////////////////////////////////////////////////
@@ -112,7 +112,6 @@ const drawModeledPerformanceGraph = (
   // Add the svg canvas for the line chart
   const svg = d3
     .select('#isa-modeled-performance-chart')
-    .append('svg')
     .attr('width', totalWidth)
     .attr('height', totalHeight)
     .append('g')

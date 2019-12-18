@@ -8,22 +8,22 @@ import data from './mockData.js';
 import drawModeledPerformanceGraph from './line-graph.generator';
 
 class App extends React.Component {
-  showChipValue(){
-    console.log('show chip value')
+  showChipValue() {
+    console.log('show chip value');
   }
 
-  setPercentChangeData(){
-    console.log('set percent changeData')
+  setPercentChangeData() {
+    console.log('set percent changeData');
   }
 
-  componentDidMount(){
+  componentDidMount() {
     drawModeledPerformanceGraph(
       data,
-      '2019-04-01',
-      '2019-10-02',
+      '2018-12-17',
+      '2019-12-16',
       this.showChipValue,
       this.setPercentChangeData
-    )
+    );
   }
 
   render() {
