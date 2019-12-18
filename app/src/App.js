@@ -18,6 +18,7 @@ class App extends React.Component {
             return (
               <DisplayChip
                 key={comparator.id}
+                id={comparator.id}
                 label={comparator.key}
                 color={colors[index]}
               />

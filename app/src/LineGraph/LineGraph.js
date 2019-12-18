@@ -5,20 +5,21 @@ import './line-graph.scss';
 import data from '../mockData.js';
 
 import drawModeledPerformanceGraph from './line-graph.generator';
-import { showValues } from '../actions';
+import { showValues, setPercentChangeValues } from '../actions';
 
 class LineGraph extends React.Component {
   constructor(props) {
     super(props);
     this.showChipValue = this.showChipValue.bind(this);
+    this.setPercentChangeValues = this.setPercentChangeValues.bind(this);
   }
 
   showChipValue(flag) {
     this.props.showChipValue(flag);
   }
 
-  setPercentChangeData(percentChangeData) {
-    // console.log('set percent changeData', percentChangeData);
+  setPercentChangeValues(percentChangeData) {
+    this.props.setPercentChangeValues(percentChangeData);
   }
 
   componentDidMount() {
@@ -27,7 +28,7 @@ class LineGraph extends React.Component {
       '2018-12-17',
       '2019-12-16',
       this.showChipValue,
-      this.setPercentChangeData
+      this.setPercentChangeValues
     );
   }
 
@@ -45,7 +46,8 @@ class LineGraph extends React.Component {
 
 export const mapDispatchToProps = dispatch => {
   return {
-    showChipValue: flag => dispatch(showValues(flag))
+    showChipValue: flag => dispatch(showValues(flag)),
+    setPercentChangeValues: data => dispatch(setPercentChangeValues(data))
   };
 };
 
