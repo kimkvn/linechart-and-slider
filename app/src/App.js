@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import './App.css';
 
@@ -13,6 +12,9 @@ class App extends React.Component {
   render() {
     return (
       <div id="app">
+        <div id="title">
+          <h1>Modeled Performance</h1>
+        </div>
         <div id="display-chip-container">
           {data.map((comparator, index) => {
             return (
@@ -27,6 +29,10 @@ class App extends React.Component {
         </div>
         <div id="chart-container">
           <LineGraph />
+        </div>
+        <div id="description">
+          <h5>A multi-line chart built with D3, React, and Redux.</h5>
+          <h5>Built by <a href="https://kimkvn.github.io/">Kevin Kim</a></h5>
         </div>
       </div>
     );

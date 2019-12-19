@@ -1,6 +1,14 @@
 #app {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
+}
+
+#title, #description{
+  padding: 20px 40px 0 40px;
+}
+
+#title h1{
+  margin: 0;
 }
 
 #display-chip-container {
@@ -10,7 +18,7 @@
 
 .displayChip {
   display: flex;
-  width: 150px;
+  width: 180px;
   min-width: 0;
   height: 32px;
   justify-content: space-between;
