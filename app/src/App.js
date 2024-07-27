@@ -32,7 +32,7 @@ class App extends React.Component {
         </div>
         <div id="description">
           <h5>A multi-line chart built with D3, React, and Redux.</h5>
-          <h5>Built by <a href="https://kimkvn.github.io/">Kevin Kim</a></h5>
+          <h5>Built by <a href="https://www.linkedin.com/in/kimkvn/">K Kim</a></h5>
         </div>
       </div>
     );
