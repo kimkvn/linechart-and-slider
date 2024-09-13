@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/multi-line-graph/static/css/main.9f499b1e.css",
+    "main.js": "/multi-line-graph/static/js/main.40a851fd.js",
+    "static/js/453.d54efef1.chunk.js": "/multi-line-graph/static/js/453.d54efef1.chunk.js",
+    "static/media/logo.svg": "/multi-line-graph/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/multi-line-graph/index.html",
+    "main.9f499b1e.css.map": "/multi-line-graph/static/css/main.9f499b1e.css.map",
+    "main.40a851fd.js.map": "/multi-line-graph/static/js/main.40a851fd.js.map",
+    "453.d54efef1.chunk.js.map": "/multi-line-graph/static/js/453.d54efef1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f499b1e.css",
+    "static/js/main.40a851fd.js"
+  ]
+}
